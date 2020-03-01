@@ -1,25 +1,67 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+bootConfigURL: https://github.com/jenkins-x/jenkins-x-boot-config.git
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  environmentGitPublic: false
-  project: ""
+  clusterName: cluster
+  devEnvApprovers:
+  - nazarii-piontko
+  environmentGitOwner: nazarii-piontko
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: npiontko-jenkins-x
   provider: gke
-  zone: ""
-gitops: true
+  registry: gcr.io
+  zone: us-central1-a
 environments:
-- key: dev
-- key: staging
-- key: production
+- ingress:
+    domain: 34.66.51.142.nip.io
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+  repository: environment-cluster-dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+  repository: environment-cluster-staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+  repository: environment-cluster-production
+gitops: true
 ingress:
-  domain: ""
+  domain: 34.66.51.142.nip.io
   externalDNS: false
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
     production: false
 kaniko: true
+repository: nexus
 secretStorage: local
 storage:
+  backup:
+    enabled: false
+    url: ""
   logs:
     enabled: false
     url: ""
@@ -29,7 +71,11 @@ storage:
   repository:
     enabled: false
     url: ""
+vault: {}
+velero:
+  schedule: ""
+  ttl: ""
 versionStream:
-  ref: "master"
+  ref: v1.0.367
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: prow

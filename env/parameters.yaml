@@ -1,0 +1,10 @@
+adminUser:
+  password: local:cluster/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: pyontko.nazar@gmail.com
+  token: local:cluster/pipelineUser:token
+  username: nazarii-piontko
+prow:
+  hmacToken: local:cluster/prow:hmacToken
