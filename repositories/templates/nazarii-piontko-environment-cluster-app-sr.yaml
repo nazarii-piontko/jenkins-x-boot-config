@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: nazarii-piontko
+    provider: github
+    repository: environment-cluster-app
+  name: nazarii-piontko-environment-cluster-app
+spec:
+  description: Imported application for nazarii-piontko/environment-cluster-app
+  httpCloneURL: https://github.com/nazarii-piontko/environment-cluster-app.git
+  org: nazarii-piontko
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: environment-cluster-app
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/nazarii-piontko/environment-cluster-app.git

@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: nazarii-piontko
+  repo: environment-cluster-app
+  url: https://github.com/nazarii-piontko/environment-cluster-app.git
+  version: ""
+  versionURL: ""
